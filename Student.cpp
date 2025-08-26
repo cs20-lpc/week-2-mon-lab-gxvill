@@ -14,10 +14,14 @@ Student::~Student(){
 }
 
 void Student::setName(std::string s){
-  *name = s;
+  if (name){
+    *name = s;
+  }
 }
 void Student::setAge(int a){
-  *age = a;
+  if (age && a >= 0){
+    *age = a;
+  }
 }
 std::string Student::getName()const{
   return *name;
